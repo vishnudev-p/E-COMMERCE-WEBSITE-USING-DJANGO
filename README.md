@@ -17,7 +17,7 @@ An e-commerce platform built using Django to facilitate online shopping. This we
 1. **Clone the repository**
    
    \```
-   git clone https://github.com/vishnudev-p/Eshop.git
+   git clone https://github.com/vishnudev-p/E-COMMERCE-WEBSITE-USING-DJANGO.git
    \```
 
 2. **Navigate to the project directory**
