@@ -78,6 +78,4 @@ Visit `http://127.0.0.1:8000/` in your browser to access the website.
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
