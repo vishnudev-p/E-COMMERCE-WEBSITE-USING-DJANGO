@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>E-commerce Website</title>
+
+  <style>
+    nav{
+      background-color: green;
+    }
+    .one-edge-shadow {
+              box-shadow: 0 8px 2px -5px rgb(246, 245, 245);
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+  font-colour: $teal-200;
+}
+  </style>
+</head>
+
+<body>
+  <!-- navbar -->
+
+<nav class="one-edge-shadow
+  navbar navbar-light
+  sticky-top navbar 
+  navbar-expand-lg
+  text-white">
+    <a class="navbar-brand ms-3 text-dark " href="/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png" style="width:50px;height:50px,color:text-light;">E-Commerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
+        </li>
+
+          </ul>
+
+
+
+
+      <ul class=" navbar-nav my-2 my-lg-0">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/cart">Cart 
+            <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+
+        {% if request.session.customer %}
+        
+        <li class="nav-item active ">
+          <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+       
+        <li class="nav-item active">
+          <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+
+
+      </ul>
+
+
+    </div>
+  </nav>
+  <!---->
+
+
+
+<!-- body -->
+<div class="container-fluid mt-3">
+	<div class="row">
+
+
+		<!-- filter -->
+
+		<div class="col-lg-3 mx-auto">
+			<div class="list-group">
+
+				<a href="/" class="list-group-item list-group-item-action btn btn-outline-success">All Products</a>
+
+				
+				<a href="/?category=22"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Women-Clothing</a>
+				
+				<a href="/?category=23"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Men-Clothing</a>
+				
+				<a href="/?category=24"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Kids-Clothing</a>
+				
+				<a href="/?category=25"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Watches</a>
+				
+				<a href="/?category=26"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Shoes &amp; Handbags</a>
+				
+				<a href="/?category=27"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Books</a>
+				
+				<a href="/?category=28"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Home &amp; Kitchen</a>
+				
+				<a href="/?category=29"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Health &amp; Personal Care</a>
+				
+				<a href="/?category=30"
+					class="list-group-item list-group-item-action btn btn-outline-success ">Gifts</a>
+				
+			</div>
+		</div>
+
+		<!-- all products -->
+		<div id='products' class="col-lg-9 mx-auto">
+			<div class="row mx-auto">
+				
+				<div class="card mx-auto mb-3" id=57 style="width: 18rem;">
+					<img class="card-img-top" src="{{ object.7_uhXCNAG.jpg.url }}" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">knee-length Frock</p>
+						<p class="card-text"><b>Rs 799</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#57" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='57'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=58 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41FVBFDQ-L._AC_SR320320__x8K742C.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Black watch</p>
+						<p class="card-text"><b>Rs 999</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#58" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='58'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=59 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41Tm1uwMmOL._AC_SR320400__OccglUa.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">kid red frock</p>
+						<p class="card-text"><b>Rs 399</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#59" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='59'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=60 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41EgywqPk2L._AC_UL320_SR320320__8DZmwl9.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Grey Tshirt</p>
+						<p class="card-text"><b>Rs 890</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#60" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='60'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=61 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/514wphzZk7S._AC__g84VeRW.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Backpack</p>
+						<p class="card-text"><b>Rs 890</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#61" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='61'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=62 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/31ef1nDAdCL._AC_SR320400__wr00sC9.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">gown</p>
+						<p class="card-text"><b>Rs 990</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#62" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='62'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=63 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/31WzloVVToL._AC_SR320400__JuFJdQA.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Denim set</p>
+						<p class="card-text"><b>Rs 1090</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#63" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='63'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=64 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/9_QebDpqi.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Multicolor frock</p>
+						<p class="card-text"><b>Rs 1999</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#64" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='64'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=65 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/31adeoSK0CL._AC_SR320400__5kLvkHW.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">pink long gown</p>
+						<p class="card-text"><b>Rs 2999</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#65" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='65'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=66 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/31-MSgaPUL._AC_SR320400__rdkZc7r.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">dress</p>
+						<p class="card-text"><b>Rs 2990</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#66" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='66'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=67 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41oABYsbrwL._AC_SR320400__ZinFYrU.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Baby Frock</p>
+						<p class="card-text"><b>Rs 890</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#67" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='67'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=68 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41LKI6hLTgL._AC_SR320400__nMd4hS7.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Linning Dress</p>
+						<p class="card-text"><b>Rs 990</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#68" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='68'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=69 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41x1lqLMyL._AC_SR320400__chBwbdw.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">t-shirt</p>
+						<p class="card-text"><b>Rs 899</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#69" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='69'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=70 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/51Lv37fiwTL._AC_UL320_SR320320__STeRZCq.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Black-Yellow Tshirt</p>
+						<p class="card-text"><b>Rs 400</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#70" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='70'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=71 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/513Fy11CuzL._AC_SR320400__plK9q7T.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Black Shirt</p>
+						<p class="card-text"><b>Rs 399</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#71" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='71'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=72 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71RWWweifuL._AC_UL320_SR320320__xM95LKs.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">mini dress</p>
+						<p class="card-text"><b>Rs 800</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#72" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='72'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=73 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/Casio._SS680_QL85__DskQXgr.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Casio Analog</p>
+						<p class="card-text"><b>Rs 1000</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#73" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='73'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=74 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/DWW._SS400_QL85__FipkklG.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Combo watches</p>
+						<p class="card-text"><b>Rs 500</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#74" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='74'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=75 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/Men_hy6fczR.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Denim Jacket</p>
+						<p class="card-text"><b>Rs 990</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#75" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='75'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=76 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/CS._SS400_QL85__4YDUqRm.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Combo watches</p>
+						<p class="card-text"><b>Rs 990</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#76" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='76'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=77 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/4169ok3M3TL._AC_SR320400__RfvZIQJ.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">navy blue tshirt</p>
+						<p class="card-text"><b>Rs 340</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#77" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='77'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=78 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/Women_LucapaK.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Brown coloured dress</p>
+						<p class="card-text"><b>Rs 1900</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#78" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='78'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=79 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41N5WVXzQAL._AC_SR320320__33G8TY3.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">combo bags</p>
+						<p class="card-text"><b>Rs 1000</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#79" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='79'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=80 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/61LctS6qp7L._AC_UL320_SR320320__CD33bqv.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Black colored shoes</p>
+						<p class="card-text"><b>Rs 999</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#80" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='80'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=81 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71yZ3oagv7L._AC_UL1500__I5TAIrZ.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Blue-grey shoes</p>
+						<p class="card-text"><b>Rs 780</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#81" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='81'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=82 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/41INKd7XG0L._AC_SR320400__zuSU4Gy.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Baby Boy Dress</p>
+						<p class="card-text"><b>Rs 1900</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#82" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='82'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=83 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/51s9Bnhr1qL._AA210_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Coding Games in Scratch</p>
+						<p class="card-text"><b>Rs 799</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#83" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='83'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=84 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/51Ffcep58fL._AA210_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Star Wars Myths &amp; Fables</p>
+						<p class="card-text"><b>Rs 600</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#84" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='84'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=85 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/515rsnc7ErL._AA210_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">5-Minute Racing Stories</p>
+						<p class="card-text"><b>Rs 469</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#85" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='85'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=86 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/51O0U68M2jL._AA210_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Chess For Dummies</p>
+						<p class="card-text"><b>Rs 588</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#86" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='86'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=87 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/51Y4cB32CoL._AA210_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Don&#x27;t Let the Pigeon Stay Up Late!</p>
+						<p class="card-text"><b>Rs 589</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#87" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='87'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=88 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71tb7LKauOL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Water Balloons</p>
+						<p class="card-text"><b>Rs 499</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#88" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='88'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=89 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71wa56BxzTL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Nightlight Lamp</p>
+						<p class="card-text"><b>Rs 390</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#89" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='89'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=90 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/81JnxfkUYL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Walkies Talkies</p>
+						<p class="card-text"><b>Rs 1990</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#90" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='90'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=91 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/91hr1ocmCL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Vaccinated for Covid 19 keychain</p>
+						<p class="card-text"><b>Rs 156</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#91" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='91'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=92 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/81bmMsAwI-L._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Disposable Masks</p>
+						<p class="card-text"><b>Rs 380</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#92" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='92'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=93 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/51DpM-TIAqS._AC_UL270_SR270270_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Magnifying glass for reading</p>
+						<p class="card-text"><b>Rs 2890</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#93" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='93'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=94 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/91rpxG-dO4L._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Sole Designs Reusable Washable</p>
+						<p class="card-text"><b>Rs 290</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#94" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='94'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=95 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/61ZnXKOo5oL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Bands</p>
+						<p class="card-text"><b>Rs 280</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#95" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='95'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=96 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/61MeA5qHIaL._AC_UL270_SR270270_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Colorful candles</p>
+						<p class="card-text"><b>Rs 599</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#96" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='96'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=97 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71ck3ge7PYL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Decors</p>
+						<p class="card-text"><b>Rs 590</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#97" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='97'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=98 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71gEWtwaZbL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Stars</p>
+						<p class="card-text"><b>Rs 489</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#98" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='98'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=99 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/61LbAmB0BZS._AC_UL100_SR100100_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Gift Mug</p>
+						<p class="card-text"><b>Rs 780</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#99" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='99'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=100 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71KlXoOsXzL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">photo Frame</p>
+						<p class="card-text"><b>Rs 777</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#100" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='100'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=101 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/71k0ZI4IVL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Wall Mounted</p>
+						<p class="card-text"><b>Rs 478</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#101" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='101'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=102 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/81vPkrXgNzL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">fancy owl</p>
+						<p class="card-text"><b>Rs 230</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#102" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='102'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=103 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/61GdQObXKbL._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">WIND chime</p>
+						<p class="card-text"><b>Rs 590</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#103" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='103'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+				<div class="card mx-auto mb-3" id=104 style="width: 18rem;">
+					<img class="card-img-top" src="/media/uploads/products/61Huv14oWjS._AC_UL320_.jpg" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-title">Wall  Mounted</p>
+						<p class="card-text"><b>Rs 689</b></p>
+						<!-- False -->
+					</div>
+
+					<div class="card-footer p-0 no-gutters">
+
+						
+						<form action="/#104" method="POST" class="btn-block">
+							<input type="hidden" name="csrfmiddlewaretoken" value="L7aa9J4aelbhc2FoGGOP2VRt5HvcnUsnAxCYC35mJFmZ92GuDtL5yyHwsvZgeO1E">
+							<input hidden type="text" name='product' value='104'>
+							<input type="submit" class="float-right btn btn-success form-control"
+								value="Add To Cart">
+						</form>
+						
+
+					</div>
+
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
